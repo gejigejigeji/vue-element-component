@@ -1,0 +1,13 @@
+.container .el-menu-tab{
+   border: 0;padding: 0 20px 0 8px;border-bottom: 2px solid #e6e6e6;
+  .el-menu-item{
+    font-size: 12px; line-height: @tabLinght; height: @tabLinght;color: @btnPrimary;text-align: center;padding: 0;
+    width: 96px;
+    &:last-child{margin: 0;}
+    &:hover,&:focus{color: @blue;}
+    &.is-active{color: @blue;font-size: 12px;border: 0;
+      &:after{content: "";display: block;width: 32px;height: 4px;border-radius: 8px;background: @blue;left: 32px;bottom: 0px;position: absolute}
+    }
+  }
+  .el-badge__content{right: 4px;top:-6px;z-index: 5;}
+}

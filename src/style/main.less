@@ -1,0 +1,258 @@
+@mainColor:#032544;
+@tableBorder:#A3BDDB;
+@tableHeaderBg:#F5F5F5;
+
+//table
+.wcc-table{
+  position: relative;
+  .wcc-table-header-form {
+    cursor: pointer;
+    display: inline-block;
+  }
+  .el-table__column-filter-trigger {
+    display: none;
+  }
+  .currRow {
+    background: @tableBorder;
+  }
+  .currRow:hover>td{
+    background: @tableBorder !important;
+  }
+  .wcc-table-rightDown {
+    position: absolute;
+    z-index: 100;
+    width: 0px;
+    height: 0px;
+  }
+}
+//子表
+.wcc-child-table-container {
+  width: 100%;
+  height: 100%;
+  padding:10px 5px;
+  display: flex;
+  justify-content: center;
+  .wcc-child-table {
+    flex: 0 0 99%;
+    .wcc-children-scope{
+      text-align: left;
+    }
+  }
+}
+.wcc-table-child-down{
+
+  a{
+    display: flex;
+    justify-content: space-between;
+  }
+  text-align: left;
+
+  span{
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+}
+.wcc-child-icon-size{
+  font-size: 30px;
+  color:@process;
+}
+
+.wcc-table-checkGroup {
+  .el-checkbox {
+    display: block !important;
+  }
+}
+//table-prop
+.wcc-table-relate-input {
+  margin-bottom: 0 !important;
+
+  .el-input {
+    width: 80px !important;
+  }
+
+}
+.el-select-dropdown{
+  min-width: 180px;
+}
+.wcc-table-header-input{
+  margin-bottom: 0 !important;
+
+  .wcc-table-header-select {
+    width: 180px;
+    .el-select__tags{
+      width: 160px !important;
+      overflow: hidden;
+    }
+  }
+  //时间范围
+  .el-date-editor--daterange{
+    width: 210px;
+  }
+  .el-range-separator {
+    padding: 0;
+  }
+  .el-range-input{
+    width: 77px;
+  }
+  .el-input__icon{
+    color: @process;
+    font-size: 16px;
+    line-height: 25px;
+  }
+}
+
+
+//handle页面的form表单样式覆盖
+.handle_body_plus{
+  .el-form{
+    .el-form-item__label{
+      line-height: 35px;
+      text-align: right;
+    }
+    .el-icon-circle-plus {
+      font-size: 24px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+  }
+}
+
+//vendor页面
+.vendor-stage-table{
+  .el-form-item{
+    margin-bottom: 0 !important;
+  }
+}
+.dialogList {
+  margin-bottom: 0 !important;
+  border-bottom: 1px solid @inpBor;
+  .el-form-item__label {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .el-form-item__content{
+    margin-left: 0 !important;
+    display: flex;
+    align-items: center;
+    span{
+      flex: 1;
+      line-height: 35px;
+    }
+    i{
+      font-size: 25px;
+      color: @process;
+      line-height: 35px;
+    }
+
+
+    .el-icon-arrow-right{
+      line-height: 36px;
+      font-size: 20px;
+    }
+  }
+}
+
+
+//快捷边距
+.pd-0{
+  padding: 0;
+}
+.pd-b-10{
+  padding-bottom: 10px;
+}
+
+
+//无数字垃圾分页
+.customePagination {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  .el-pagination {
+    padding: 0 !important;
+  }
+
+  .el-icon-caret-left, .el-icon-caret-right {
+    font-size: 25px;
+    cursor: pointer;
+
+    &:hover {
+      color: @process;
+    }
+  }
+}
+
+//滚动dialog
+.scroll-dialog {
+  max-height: 700px;
+  .handle{
+    max-height: 500px;
+    overflow: auto;
+  }
+
+}
+
+.handle_dialog_signRow-form{
+  .el-form-item__label{
+    line-height: 36px;
+    text-align: right;
+  }
+  .el-form-item__content{
+    width: 220px;
+    text-align: left;
+  }
+}
+
+.el-date-editor{
+  .el-icon-date{
+    color: @process;
+    font-size: 16px;
+  }
+}
+
+//shipTo
+.handleShipTo{
+  .el-icon-question{
+    color:@process;
+    font-size: 18px;
+    vertical-align: middle;
+  }
+  .formItemW{
+    margin: 5px 0 5px 0 !important;
+    width: 80px;
+    .el-icon-info{
+      margin-left: 5px;
+      font-size: 18px;
+      color: #F56C6C;
+    }
+  }
+}
+
+//GCstage
+.gcStateInputWidth{
+  .el-input {
+    width: 86%;
+    margin-right: 10px;
+  }
+  svg{
+    font-size: 20px;
+    cursor:pointer;
+  }
+}//GCStandardFile
+.gcStandardFileInputWidth{
+  .el-select {
+    width: 78%;
+    margin-right: 10px;
+    .el-input{
+      width: 100%;
+    }
+  }
+  svg{
+    font-size: 20px;
+    cursor:pointer;
+  }
+}
+
+.link-color{
+  color: @process;
+  cursor: pointer;
+}

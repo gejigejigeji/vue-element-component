@@ -1,0 +1,27 @@
+
+//main-container全局样式
+.main-container { padding: 0; box-sizing: border-box;
+  .app-main{min-height: 100%;height: 100%;position: relative;padding-bottom: 0;box-sizing: border-box;overflow-x: scroll;}
+  .app-container{padding: 0 8px;.app-container{padding: 0}}
+}
+//列表页标题
+.page_title{line-height: 42px;height: 42px;padding: 0 20px 0 8px;font-family: "NotoSansSC-Medium";font-size: 15px;border-bottom: 2px solid #e6e6e6;
+  &:before{content: "";display: inline-block;width: 3px;height: 19px;vertical-align: middle;background: @blue;margin-right: 7px;}
+}
+//列表页操作栏
+.page_action{padding: 8px 0;
+  .el-button{
+    width: auto;height: 36px;line-height: 36px;font-size: 12px;padding: 0 8px;border-radius: 4px;border: 1px solid #032544;min-width: 72px;
+    &:hover{background: @blue;color: @whiteText;border-radius: 5px;}
+    + .el-button{margin-left: 5px}
+    &.is-disabled{
+      border-color: #C0C4CC;
+      &:hover{background: none;color: @colorFour;}
+    }
+    svg{margin-right: 7px;width: 20px;height: 21px;}
+    i{font-size: 20px;display: inline-block;
+      &.el-icon-arrow-down{font-size: 14px;margin-top: -2px;}
+    }
+  }
+}
+

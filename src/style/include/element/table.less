@@ -1,0 +1,121 @@
+/*
+  表格部分
+ */
+@tableTxtTh:#032544;
+@tableThBg:#F5F5F5 ;
+@tableStripedBg: #F0F8FF;
+@tableTxt:#5D5D70;
+@tableBor:#A3BDDB;
+@tableThBor: #A3BDDB;
+@tableCurrBg: rgba(97,152,241,.2);
+@tableCurrBor: transparent;
+//表格
+.el-table--group,.el-table{border-color: @tableBor;
+  &:after{background-color: @tableBor;}
+}
+.el-table.el-table--border {color: @tableTxt;font-size: 12px;border-collapse: separate;max-width: 100%;border-color: @tableBor;
+  td, th{font-size: 12px;word-break: break-all;text-align: center;}
+  th.is-leaf, tbody td{border-color: @tableBor;}
+  td.handles{text-align: left;}
+  thead th {background: @tableThBg; color: @tableTxtTh;font-family: 'NotoSansSC-Medium'; font-size: 14px; font-weight: 500; vertical-align: middle;padding: (30-18)/2px 2px;
+    &.required>.cell:before{content: "*";color: @red;background: transparent;line-height: 18px;height: 18px;margin-right: 2px;}
+    &:after{content: "";display: inline-block;vertical-align: middle;height: 100%; width: 0;}
+    .cell{display: inline-block;padding: 0 3px; vertical-align: middle; line-height: 18px;font-size: 14px;
+      &.filter,&.highlight{cursor: pointer;padding: 0 12px;}
+    }
+    .highlight.cell{color: #fff;}
+    .column_type.cell{padding: 0;}
+    .show_clear{position: absolute;display: none; cursor: pointer; width: 12px;height: 12px;color: #fff;top: 2px; right: 3px;}
+    &.highlight{background: @tableTxtTh;color: #fff;
+      .show_clear{display: block;}
+    }
+  }
+  .el-table__row{cursor: pointer;}
+  tbody td{ padding: 1px 0; word-break: break-all;
+    .cell{white-space: nowrap;max-width:100%;box-sizing: border-box;word-break: break-all;}
+  }
+  .cell{line-height: 18px;min-height: 18px;border: 0;
+    &.el-tooltip{min-width: 10px!important;}
+  }
+  .el-table__body{padding-bottom: 1px;
+    //tr.el-table__row--striped td{background: @tableStripedBg;}
+    tr.curr_row{
+      td{background: @tableCurrBg;color: @tableTxtTh;}//border-color: @tableCurrBor;border-bottom-color: @tableBor;
+    }
+  }
+  .el-form-item--small.el-form-item{
+    margin: 0 0 5px 0;
+  }
+  &.el-table--medium{
+    td .cell{padding: 6px 7px 10px 7px;}
+  }
+  &.el-table--small{
+    td .cell{padding: 1px 7px;}
+  }
+  &.el-table-max{
+    td .cell{padding: 18px 10px;}
+  }
+  //表格特殊标记行
+  tr.sign_row>td{background: #F0F0F0; }
+}
+//操作页表格
+.table_edit.el-table.el-table--border{
+  .el-form-item{margin-bottom: 0;}
+  //.el-form-item__error{display: none;}
+  //th>.cell{padding: 0 5px;}
+  td>.cell{padding: 6px 5px 14px 5px;}
+  //tr.sign_row>td>.cell{padding: 5px 10px;}
+}
+//筛选框
+.table_filter{box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);border-radius: 5px;position: fixed;background: #fff;padding: 12px;min-width: 187px;
+  max-height: 210px;overflow: auto;z-index: 100;
+  .el-form-item{margin: 0 0 5px 0;}
+  //文字输入框
+  .el-input__inner{font-size: 14px;
+    border-radius: 4px;height: 36px;line-height: 36px;border: 1px solid #A8BDD8;color: @tableTxtTh;
+    .el-input__suffix{line-height: 35-2px;color: @colorFour}
+  }
+  //日期
+  .el-date-editor--daterange.el-input__inner{width: 225px;padding: 0 0 0 10px;
+    .el-range-input,.el-range-separator{font-size: 14px;}
+    .el-icon-date{margin-left: -10px;}
+    .el-icon-date, .el-range-separator,.el-range__close-icon{vertical-align: middle;line-height: 36-2px;}
+    .el-range__close-icon{right: 0;}
+  }
+  //多选框
+  .el-checkbox{color: #134075;font-weight: 400;font-size: 14px;line-height: 20px;
+    .el-checkbox-group{max-width: 180px;}
+    .el-checkbox__label{font-size: 14px;white-space: normal;}
+    .el-checkbox__input{vertical-align: top;padding-top: (19-12)/2px;}
+    .el-checkbox__input.is-checked, .is-indeterminate{
+      .el-checkbox__inner{background-color: #006FFF;border-color: #006FFF;}
+      &+.el-checkbox__label{color: #006FFF;font-size: 14px;}
+    }
+  }
+  .el-checkbox-group{
+    &>.el-checkbox{display: block;padding-top: 7px;margin: 0;}
+  }
+  //数字输入框
+  .filter_num{color: @tableTxtTh;
+    .el-input{display: inline-block;width: 120px;}
+    .line_num{margin: 0 5px;}
+    //.tip_num{margin-top: 10px;}
+  }
+
+}
+//表头错位
+body .el-table{
+  th.gutter{
+    display: table-cell!important;
+  }
+  colgroup.gutter{
+    display: table-cell!important;
+  }
+  //th.gutter{display: none;}
+  th.gutter{display: table-cell!important;}
+  colgroup.gutter{display: table-cell!important;}
+  //colgroup {display: table-row!important;
+  //  col{
+  //  display: table-cell!important;
+  //}}
+}

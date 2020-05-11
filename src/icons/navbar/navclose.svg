@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 26 22" style="enable-background:new 0 0 26 22;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+</style>
+<desc>Created with Sketch.</desc>
+<g id="Page-1">
+	<g id="侧边栏收起icon">
+		<polygon id="Polygon" class="st0" points="1.2,11.5 8.1,15.5 8.1,7.5 		"/>
+		<g id="Group-2" transform="translate(13.000000, 11.000000) rotate(-180.000000) translate(-13.000000, -11.000000) ">
+			<path id="Rectangle-6" class="st0" d="M2,0h22c1.1,0,2,0.9,2,2l0,0c0,1.1-0.9,2-2,2H2C0.9,4,0,3.1,0,2l0,0C0,0.9,0.9,0,2,0z"/>
+			<path id="Rectangle-6-Copy" class="st0" d="M2,9h10c1.1,0,2,0.9,2,2l0,0c0,1.1-0.9,2-2,2H2c-1.1,0-2-0.9-2-2l0,0C0,9.9,0.9,9,2,9
+				z"/>
+			<path id="Rectangle-6-Copy-2" class="st0" d="M2,18h3c1.1,0,2,0.9,2,2l0,0c0,1.1-0.9,2-2,2H2c-1.1,0-2-0.9-2-2l0,0
+				C0,18.9,0.9,18,2,18z"/>
+		</g>
+	</g>
+</g>
+</svg>

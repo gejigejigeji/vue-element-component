@@ -1,0 +1,70 @@
+@import "./element/table";
+@import "./element/form";
+@import "./element/page";
+@import "./element/tab";
+@import "./element/select";
+@import "./element/tooltip";
+@import "./element/input";
+@import "./element/icon";
+@import "./element/images";
+@import "./element/dialog";
+//覆盖一些element-ui样式
+.el-card{color: @text;}
+.el-breadcrumb__inner, .el-breadcrumb__inner a{ font-weight: 400!important; }
+.el-cascader-panel .el-cascader-menu__wrap{height: 204px;}
+//按钮
+.el-button{border-radius: 8px;width: 180px;height: 44px;line-height: 24px;font-size: 16px;}
+.el-button--small:not(.el-button--text){padding: 0 6px;line-height: 25-2px; box-sizing: border-box;min-width: 114px;font-size: 14px; }
+.el-button+.el-button{margin-left: 20px;}
+.el-button--mini{padding: 0 6px;line-height: 28-2px;min-width: 52px;}
+
+//textarea修改样式
+.el-textarea__inner { padding: 4px 8px; resize: none; border-radius: 2px;border: 1px solid #F0F0F0; line-height: 12+4*2px;}
+//element ui upload
+.el-upload {
+  input[type="file"] {display: none !important; }
+}
+.el-upload__input { display: none;}
+.upload-container {
+  .el-upload { width: 100%;
+    .el-upload-dragger { width: 100%; height: 200px; }
+  }
+}
+//refine vue-multiselect plugin
+.multiselect { line-height: 16px; }
+.multiselect--active {  z-index: 1000 !important;  }
+
+//日期输入框
+.el-form-item__label{color: @blue;font-weight: normal;font-size: 12px;}
+.el-range-editor--small .el-range-separator{line-height: 17px;}
+.el-range-editor--small{
+  .el-range-separator{line-height: 17px;color: @text;}
+  .el-range-input{line-height: 15px;color: @text;}
+  .el-range__icon{line-height: 15px;}
+}
+.el-cascader__label{color: @text;}
+//messagex对话框
+.el-message-box{background: #F9FAFB;border: 1px solid #E2E6E9;border-radius: 2px;box-shadow: 0 8px 10px 0 rgba(65,95,207,0.08);}
+.el-message-box__header{background: #fff;padding: 11px 20px;color: #979797;
+  .el-message-box__headerbtn{top:(36-18)/2px;}
+}
+.el-message-box__title{font-size: 14px;}
+.el-message-box__content{font-size: 13px;color: #646B77;}
+.el-message-box__status{font-size: 20px!important;}
+.el-message--error{max-height: 600px;overflow: auto;align-items:baseline;
+  .el-message__content{.break()}
+  .el-message__closeBtn{top:20px;}
+}
+//小红点
+.el-badge{
+  .el-badge__content{/*line-height: 14px; height: 14px;*/ padding: 0 3px;
+    &.is-dot{height: 8px;width: 8px;}
+  }
+}
+.el-form--label-top {
+  .el-form-item__label {
+    padding: 0 0 0 0;line-height: 30px;font-weight: 600;
+  }
+  .el-checkbox{margin-right: 10px;}
+}
+

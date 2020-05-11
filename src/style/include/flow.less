@@ -1,0 +1,209 @@
+
+.container {
+  width: 100%;
+  height: 100vh;
+  p{
+    margin: 0;
+    padding: 0;
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+  .selectProductLine {
+    font-size: 50px;
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    z-index: 100;
+    bottom: 0;
+    left: 50px;
+  }
+}
+.foreignObjectBody,.foreignObject{
+  width: 8000px !important;
+  height: 4000px !important;
+  position: relative;
+  //left: -50%;
+  //top: -50%;
+  overflow: visible;
+  background: none;
+}
+.foreignObjectBody{
+  border: 5px solid rgba(36, 33, 28);
+}
+.foreignObject{
+  overflow: visible;
+  position: relative;
+  z-index: -1;
+  pointer-events: none;
+}
+#canvas {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index:-1;
+}
+.vdr-item{
+  background: #fff;
+  border: 1px solid #DCDFE6;
+  pointer-events:auto;
+  border-radius: 5px;
+  .handle{
+    padding:0 !important ;
+  }
+}
+
+.svgPanZoomEl{
+  width: 10000px !important;
+  height: 4000px !important;
+}
+//flow内容区域
+.vdr-container {
+  width: 100%;
+  height: 100%;
+  h2 {
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+    border-bottom: 1px solid #DCDFE6;
+  }
+  text-align: center;
+  .operatorBtnGroup {
+    position: absolute;
+    display: flex;
+    bottom: 10px;
+    justify-content: center;
+    width: 100%;
+
+    .el-button{
+      min-width: 60px !important;
+    }
+    .flow-create-button{
+      min-width: 80px !important;
+      width: 60px !important;
+    }
+    .el-button:first-child{
+      margin-right: 10px;
+    }
+  }
+  .item-point {
+    position: absolute;
+    color: #67C23A;
+    font-size: 30px;
+    &:hover {
+      color: #8eeb3e;
+      cursor: pointer;
+    }
+  }
+  .item-point-right {
+    right: 0;
+    top: 50%;
+    transform: translateX(100%) translateY(-50%);
+  }
+  .item-point-left{
+    left: 0;
+    top: 50%;
+    transform: translateX(-100%) translateY(-50%);
+  }
+
+  //添加供应商
+  .addSell {
+    position: absolute;
+    bottom: 70px;
+    font-size: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.addOptionPop{
+  .isFirstRadioPop{
+    margin-left: 10px !important;
+  }
+  .el-radio{
+    display: block;
+    width: 80px;
+    margin-top: 10px !important;
+  }
+}
+.process-button-confirm{
+  margin-top: 10px;
+  margin-left: 10px;
+  .el-button{
+    width: 100px;
+  }
+  .el-button:last-child{
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+//线
+
+.paths {
+  stroke: rgba(38, 27, 30,1);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 10;
+  stroke-dashoffset: 300;
+  animation: dashLine 20s linear infinite;
+  position: relative;
+  z-index: auto;
+  cursor: pointer;
+  pointer-events: visibleStroke;
+  &:hover {
+    cursor: pointer;
+    stroke: rgb(159, 156, 55);
+  }
+}
+@keyframes dashLine { from { stroke-dashoffset: 300; } to { stroke-dashoffset: 10; } }
+.svg-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  /*pointer-events:none;*/
+  z-index: 2;
+}
+
+//flow控制器
+.flowControl {
+  background: rgba(36, 33, 28,1);
+  display: flex;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  color: #fff;
+
+  .control-group {
+    flex: 1;
+    border: 1px solid #DCDFE6;
+    .control-title {
+      text-align: center;
+      border-bottom: 1px solid #DCDFE6;
+      padding: 5px 0;
+    }
+    .control-content {
+      align-items: center;
+      align-content: center;
+      height: 50px;
+      display: flex;
+      .el-checkbox-group{
+        display: flex;
+        width: 100%;
+      }
+      .control-items {
+        text-align: center;
+        flex: 1;
+        border-right: 1px solid #DCDFE6;
+        .el-checkbox__label{
+          color: #fff !important;
+        }
+      }
+    }
+  }
+  .control-width-color {
+    flex: 0 0 200px;
+  }
+}

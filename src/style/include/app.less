@@ -1,0 +1,28 @@
+.app-wrapper {.clearfix(); position: relative; height: 100%; width: 100%;}
+body {
+  padding: 0;
+  margin: 0;
+}
+#app {height: 100%;
+  .header{
+    width: 100%;box-sizing: border-box; height: @headerHei;z-index: 10;overflow: hidden;border: none;text-align: right;
+    background: @blue;color: @whiteText;position: absolute;left: 0;top: 0;
+  }
+  .sidebar-container{
+    position: fixed; top: 48px; left: 0; bottom: 0; z-index: 107;  width: @menuBig;transition: width 0.15s;border-right:2px solid #E8ECF1;
+    border-top:2px solid #E8ECF1;
+  }
+  .main-container { height: 100%; padding-top: 48px;padding-left: @menuBig; box-sizing: border-box;
+    transition: padding-left 0.15s;}
+  .hideSidebar{
+    .sidebar-container{width: @menuWid!important;}
+    .plat-name{width: @menuWid!important;}
+    .main-container{padding-left: @menuWid;transition: padding-left 0.15s;}
+    //.plat-name{ width: 36px!important; }
+  }
+}
+.el-loading-mask{background: rgba(0, 0, 0, 0);}
+//401页面链接
+.link-type,.link-type:focus { color: #337ab7; cursor: pointer;
+  &:hover { color: rgb(32, 160, 255); }
+}

@@ -1,0 +1,33 @@
+//页码
+@pageBor: #0C2542;
+@pageH: 32px;
+@pageTH: 30px;
+.scrollPage{height: 51px;
+  .scroll-wrapper{min-width: 100%;}
+}
+.pagination-container { padding: 8px;background: #fff;color: @pagTxt;display: flex;white-space: nowrap;overflow: auto;
+  .page{flex: 1;}
+  .el-pagination span:not([class*=suffix]), .el-pagination button{font-size: 12px;height: @pageH;line-height: @pageTH;}
+  .el-pagination__sizes{height: @pageH;line-height: @pageTH;font-size: 14px;margin-right: 10px;
+    .el-input__icon{line-height: @pageTH;}
+    .el-select .el-input{width: 97px;}
+    .el-input .el-input__inner{font-size: 14px;height: @pageH;border-color: @pageBor;color: @pageBor;border-radius: 5px;padding: 0 20px 0 5px;}
+    .el-input__icon{width: @pageTH;color: @pagTxt;}
+    .el-icon-arrow-up:before{content: "\e78f";font-size: 14px;}
+  }
+  .el-pagination__total{display: inline-block;vertical-align: top; line-height: @pageH;color: @pagTxt;font-size: 14px;}
+  .el-pagination{font-weight: normal;display: inline-block;overflow: hidden;clear: both;padding: 0;
+    .el-pager{font-weight: normal;color: @pagTxt;}
+    .el-pager li{
+      &.more::before{line-height: @pageH;}
+    }
+    .el-pager{padding-top: (32-24)/2px}
+    .el-pager li,.el-pagination__total{color: @pagTxt;}
+    .btn-next,.btn-prev,.el-pager li,.el-pagination__total{background: transparent;min-width: 16px;line-height: 24px;font-size: 12px;height: 24px;}
+    .btn-prev,.btn-next{color: @blue;height: @pageH;}
+    .btn-prev[disabled],.btn-next[disabled]{color: @pagBDis;cursor: not-allowed;}
+  }
+  .page_text{color: #FF6565;line-height: 32px;font-size: 14px;padding-right: 8px;
+    .item{margin-left: 25px;}
+  }
+}

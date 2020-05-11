@@ -1,0 +1,36 @@
+.el-select-dropdown__item{max-width: 100%;color: @blue}
+//下拉框样式
+.el-select,.el-date-editor .el-input {
+  .el-select__caret{color: #134075;}
+  &.is-focus{
+    .el-input__inner{}
+  }
+  .el-input__inner{
+      &:focus{border-color: @blueb;}
+  }
+  .el-tag.el-tag--info{
+    color: @blue;
+  }
+}
+.el-input__inner{overflow: hidden;text-overflow: ellipsis;}
+//.el-select-dropdown__item{font-size: 12px;}
+.el-form-item__content .el-select{width: 100%;}
+.el-input__inner{
+  border: 1px solid @inBorCl;border-radius: 2px;padding:  0 8px;border-radius: 4px;
+  &:hover{border-color: @inputHover;}
+
+}
+.el-input--medium {
+  font-size: 12px;
+  .el-input__inner{
+      height: 36px;line-height: 36px;border: 2px solid #E5E5EA;color: @blue;font-size: 12px;
+  }
+  .el-textarea__inner{
+    height: 106px;line-height: 18px;border-radius: 4px;border: 2px solid #E5E5EA;color: @blue;
+  }
+}
+.el-range-editor--medium.el-input__inner{
+  border: 2px solid #eee;color: @inputHover;font-size: 12px;
+  &:hover{border-color:@inputHover}
+}
+.el-input-group__append{padding: 0 13px;border-color: @inBorCl;}

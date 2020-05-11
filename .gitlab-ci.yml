@@ -1,0 +1,55 @@
+stages:
+  - build
+  - deploy
+
+build:
+  only:
+    refs:
+      - alpha
+      - beta
+  stage: build
+  image:
+    name: docker:19.03.1
+  services:
+    - name: docker:19.03.1-dind
+  variables:
+    DOCKER_HOST: tcp://localhost:2375
+    DOCKER_DRIVER: overlay2
+    DOCKER_TLS_CERTDIR: ""
+  script:
+    - echo $CI_REGISTRY_IMAGE
+    - echo -n $CI_JOB_TOKEN | docker login -u gitlab-ci-token --password-stdin $CI_REGISTRY
+    - docker build --pull -t $CI_REGISTRY_IMAGE:latest .
+    - docker push $CI_REGISTRY_IMAGE:latest
+
+deploy:
+  only:
+    refs:
+      - alpha
+      - beta
+  stage: deploy
+  image:
+    name: registry.cn-shanghai.aliyuncs.com/clp/kubectl
+    entrypoint: ["/bin/sh", "-c"]
+  environment:
+    name: review/$CI_BUILD_REF_NAME
+  script:
+    - export KUBECONFIG=''
+    - cd .k8s/
+    - sed -i 's~__CI_REGISTRY_IMAGE__~'$CI_REGISTRY_IMAGE'~g' deployment.yaml
+    - sed -i 's~__CI_PROJECT_NAME__~'$CI_PROJECT_NAME'~g' deployment.yaml service.yaml configmap.yaml
+    - sed -i 's~__CI_COMMIT_SHORT_SHA__~'$CI_COMMIT_SHORT_SHA'~g' deployment.yaml service.yaml configmap.yaml
+    - sed -i 's~__CI_COMMIT_REF_SLUG__~'$CI_COMMIT_REF_SLUG'~g' deployment.yaml service.yaml configmap.yaml
+    - kubectl version
+    - kubectl apply -f configmap.yaml
+    - kubectl apply -f service.yaml
+    - kubectl apply -f deployment.yaml
+    # verify the deployment succeeded
+    - kubectl rollout restart -f deployment.yaml
+    - kubectl get -n gc-scm-$CI_COMMIT_REF_SLUG all,ing -l branch=$CI_COMMIT_REF_SLUG
+    # apply istio service mesh components
+    - cd .istio/
+    - sed -i 's~__CI_PROJECT_NAME__~'$CI_PROJECT_NAME'~g' virtualservice.yaml
+    - sed -i 's~__CI_COMMIT_SHORT_SHA__~'$CI_COMMIT_SHORT_SHA'~g' virtualservice.yaml
+    - sed -i 's~__CI_COMMIT_REF_SLUG__~'$CI_COMMIT_REF_SLUG'~g' virtualservice.yaml
+    - kubectl apply -f virtualservice.yaml

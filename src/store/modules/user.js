@@ -30,15 +30,20 @@ const user = {
     // 用户名登录
     LoginByUsername({ commit }, userInfo) {
       return new Promise((resolve, reject) => {
-        loginByUsername(userInfo).then(response => {
-          const data = response.data
-          setSign(data.name||'')
-          commit('SET_NAME', data.name||'')
-          commit('SET_USERID', data.id||'')
-          resolve()
-        }).catch(error => {
-          reject(error)
-        })
+        // const data = response.data || ''
+        setSign('a')
+        commit('SET_NAME', 'a')
+        commit('SET_USERID', 'a')
+        resolve()
+        // loginByUsername(userInfo).then(response => {
+        //   const data = response.data
+        //   setSign(data.name||'')
+        //   commit('SET_NAME', data.name||'')
+        //   commit('SET_USERID', data.id||'')
+        //   resolve()
+        // }).catch(error => {
+        //   reject(error)
+        // })
       })
     },
     // 获取用户信息

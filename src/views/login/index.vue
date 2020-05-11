@@ -111,7 +111,6 @@
         })
       },
       handleLogin() {
-        console.log(process.env)
         this.$refs.loginForm.validate(valid => {
           if (valid) {
             this.loading = true

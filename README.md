@@ -9,11 +9,9 @@
 
 - [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
 
-- [electron-vue-admin](https://github.com/PanJiaChen/electron-vue-admin)
-
-- [vue-typescript-admin-template](https://github.com/Armour/vue-typescript-admin-template)
-
-- [awesome-project](https://github.com/PanJiaChen/vue-element-admin/issues/2312)
+## 流程图
+一款根据公司业务做生产管理的流程图系统，支持上帝视角沙盘模式、自动对齐、拖拽移动、拖拽缩放，基于graph算法拟定数据结构，支持递归JSON树查找；
+<img src="https://raw.githubusercontent.com/gejigejigeji/vue-element-component/master/images/flow.png" width="100%"/>
 
 
 ## Layout
